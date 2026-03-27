@@ -287,6 +287,7 @@ export default function App() {
           mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
         }}
         onMouseLeave={() => { mouseRef.current = null }}
+        onContextMenu={e => e.preventDefault()}
       >
         <video ref={videoARef} className="hero-video" src={VIDEOS[0]} autoPlay muted playsInline />
         <video ref={videoBRef} className="hero-video" muted playsInline />
