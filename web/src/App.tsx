@@ -39,7 +39,7 @@ interface PickupVideo {
 const LANGS = [
   { value: 'ja',    label: 'JA' },
   { value: 'en',    label: 'EN' },
-  { value: 'ko',    label: 'KO' },
+  { value: 'ko',    label: 'KR' },
   { value: 'zh-TW', label: 'TW' },
 ]
 
