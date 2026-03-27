@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --bg:         #0f1923;
+  --bg-2:       #1a2738;
+  --bg-3:       #243447;
+  --accent:     #3b5c8a;
+  --steel:      #8fa8c0;
+  --text:       #d8e4ef;
+  --text-muted: #6a8099;
+  --border:     #243447;
+  --header-h:   64px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--steel); }
+
+a { color: var(--steel); }
+a:hover { color: var(--text); }
+
+h3 {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+/* ── ヘッダー ── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 200;
+}
+
+.header-logo { flex-shrink: 0; }
+.logo-img {
+  height: 38px;
+  width: auto;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  display: block;
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.header-nav-link {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.header-nav-btn {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.header-nav-link:hover,
+.header-nav-link.active { color: var(--text); }
+
+.header-lang {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+.lang-btn:hover { color: var(--text); }
+.lang-btn.active { color: var(--steel); background: var(--bg-3); }
+
+/* ── ヒーロー動画 ── */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: calc((100vh - var(--header-h)) / 2);
+  margin-top: var(--header-h);
+  overflow: hidden;
+  background: #000;
+}
+.hero-glitch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1.5s ease;
+}
+
+/* ── フィルターセクション ── */
+.filter-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 72px 56px;
+  gap: 64px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-left { flex: 1; }
+.filter-tagline {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+.filter-tagline-prefix {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.5em;
+  vertical-align: bottom;
+  margin-right: 0.15em;
+}
+.filter-tagline-prefix span:first-child {
+  align-self: flex-end;
+}
+
+.filter-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.filter-right {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.filter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s, padding-left 0.15s;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+.filter-item:first-child { border-top: 1px solid var(--border); }
+.filter-item:hover { color: var(--text); padding-left: 8px; }
+.filter-item.active { color: var(--text); }
+.filter-item.active .filter-item-name::before {
+  content: '▶ ';
+  font-size: 0.65em;
+  color: var(--accent);
+}
+.filter-item-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.filter-item-arrow { font-size: 1rem; color: var(--steel); }
+
+/* ── メインコンテンツ ── */
+.main-content {
+  padding: 56px 56px;
+  min-height: 480px;
+}
+.status-text { color: var(--text-muted); }
+.status-text.error { color: #e05a6a; }
+
+/* ── ボタン ── */
+.btn-secondary {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  letter-spacing: 0.02em;
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* ── エクスパンダー ── */
+.expander {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.expander:hover { border-color: var(--accent); }
+.expander-header {
+  width: 100%;
+  text-align: left;
+  background: var(--bg-2);
+  border: none;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+}
+.expander-header:hover { background: var(--bg-3); }
+.expander-body {
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+
+/* ── セットリスト表 ── */
+.setlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  text-align: left;
+}
+.setlist-table th {
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.setlist-table th:nth-child(1) { width: 36px; text-align: left; }
+.setlist-table th:nth-child(2) { width: 220px; }
+.setlist-table th:nth-child(3) { width: 180px; }
+.setlist-table th:nth-child(4) { width: 60px; }
+.setlist-table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--bg-3);
+  color: var(--text);
+  white-space: nowrap;
+}
+.setlist-table td:nth-child(1) { color: var(--text-muted); text-align: left; width: 36px; }
+.setlist-table td:nth-child(2) { width: 220px; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
+.setlist-table td:nth-child(3) { width: 180px; overflow: hidden; text-overflow: ellipsis; max-width: 180px; color: var(--text-muted); }
+.setlist-table td:nth-child(4) { width: 60px; }
+.setlist-table tr:last-child td { border-bottom: none; }
+.setlist-table tr:hover td { background: var(--bg-3); }
+.setlist-table a { color: var(--steel); text-decoration: none; }
+.setlist-table a:hover { color: var(--text); text-decoration: underline; }
+
+/* ── 楽曲一覧表 ── */
+.songs-table-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(25 * 38px + 42px);
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.songs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.songs-table thead { position: sticky; top: 0; z-index: 1; }
+.songs-table th {
+  text-align: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+.songs-table th:hover { background: var(--bg-3); color: var(--text); }
+.songs-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--bg-3);
+  color: var(--text);
+  white-space: nowrap;
+}
+.songs-table th:nth-child(1), .songs-table td:nth-child(1) { min-width: 190px; }
+.songs-table th:nth-child(2), .songs-table td:nth-child(2) { min-width: 170px; }
+.songs-table th:nth-child(3), .songs-table td:nth-child(3) { min-width: 150px; }
+.songs-table th:nth-child(4), .songs-table td:nth-child(4) { min-width: 150px; }
+.songs-table th:nth-child(5), .songs-table td:nth-child(5) { min-width: 110px; }
+.songs-table th:nth-child(6), .songs-table td:nth-child(6) { min-width:  90px; }
+.songs-table th:nth-child(7), .songs-table td:nth-child(7) { min-width:  80px; }
+.songs-table tr:hover td { background: var(--bg-3); }
+
+/* ── ピックアップ ── */
+.pickup-section {
+  padding: 72px 56px;
+  border-top: 1px solid var(--border);
+}
+.pickup-heading {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin: 0 0 32px;
+}
+.pickup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pickup-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.pickup-card:hover { border-color: var(--accent); }
+.pickup-card.new-release { border-color: var(--steel); }
+.new-release-badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--steel);
+  color: var(--bg);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  z-index: 1;
+}
+.pickup-embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.pickup-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.pickup-card-title {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── モーダル ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 300;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-panel {
+  width: min(600px, 100vw);
+  height: 100%;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  position: relative;
+  padding: 80px 40px 40px;
+  animation: slideIn 0.25s ease;
+}
+@keyframes slideIn {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.modal-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.modal-close:hover { color: var(--text); }
+.modal-body { color: var(--text); }
+
+/* ── フッター ── */
+.footer-full  { display: inline; }
+.footer-short { display: none; }
+.footer-icons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.footer-icon-link {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-icon-link:hover { color: var(--steel); }
+.footer-icon-link svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* ── レスポンシブ ── */
+@media (max-width: 960px) {
+  .pickup-grid { grid-template-columns: repeat(2, 1fr); }
+  .filter-section { flex-direction: column; padding: 48px 32px; gap: 40px; }
+  .filter-tagline { font-size: 1.8rem; }
+  .filter-right { min-width: 0; width: 100%; }
+  .main-content { padding: 40px 32px; }
+  .pickup-section { padding: 56px 32px; }
+}
+
+@media (max-width: 600px) {
+  .site-header { padding: 0 16px; }
+  .header-nav { gap: 18px; }
+  .header-nav-link { font-size: 0.68rem; letter-spacing: 0.1em; }
+  .filter-section { padding: 40px 20px; }
+  .filter-tagline { font-size: 1.4rem; }
+  .main-content { padding: 32px 20px; }
+  .pickup-section { padding: 40px 20px; }
+  .pickup-grid { grid-template-columns: 1fr; }
+  .songs-table-wrap { max-height: calc(15 * 38px + 42px); }
+  .footer-full  { display: none; }
+  .footer-short { display: inline; }
+  .footer-icons { display: none; }
+  .expander-body > div { grid-template-columns: 1fr !important; }
+}

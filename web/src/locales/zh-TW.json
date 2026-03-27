@@ -1,0 +1,81 @@
+{
+  "tab": {
+    "streams": "LiveStreaming Info",
+    "songs": "Uta-Mita DB",
+    "about": "About",
+    "changelog": "更新記錄"
+  },
+  "loading": "載入中...",
+  "error": "資料載入失敗：{{error}}",
+  "lang": {
+    "ja": "日本語",
+    "en": "English",
+    "ko": "한국어",
+    "zhTW": "繁體中文"
+  },
+  "streams": {
+    "empty": "尚無直播記錄。",
+    "searchPlaceholder": "以曲名或原曲藝術家搜尋...",
+    "searchHits": "找到 {{count}} 場直播",
+    "searchNoResults": "找不到包含「{{query}}」的直播。",
+    "expandAll": "▼ 全部展開",
+    "collapseAll": "▲ 全部收起",
+    "colSong": "曲名",
+    "colArtist": "原曲藝術家",
+    "colUrl": "URL",
+    "colCollab": "合唱嘉賓",
+    "openYouTube": "▶ 在 YouTube 開啟",
+    "noThumbnail": "無縮圖",
+    "firstBadge": "初",
+    "openLink": "▶ 開啟"
+  },
+  "songs": {
+    "empty": "尚無曲目記錄。",
+    "colSong": "曲名",
+    "colArtist": "原曲藝術家",
+    "colLyrics": "作詞",
+    "colCompose": "作曲",
+    "colRelease": "發行日",
+    "colCount": "演唱次數",
+    "rankingTitle": "演唱次數排名（前 20 首）",
+    "reset": "重置",
+    "yearTitle": "發行年份分布",
+    "artistTitle": "原曲藝術家分布"
+  },
+  "about": {
+    "siteTitle": "關於本站",
+    "siteDesc1": "本站是以 RK Music 旗下 VSinger 深影（Mikage）的翻唱作品及直播資訊為主題的粉絲製作資料庫。",
+    "siteDesc2": "本站並非官方網站，資訊可能包含錯誤。請勿直接聯繫 RK Music 及深影。如有疑問，請聯繫<link>白百合と金鷲亭(@WL_GE_inn)</link>。",
+    "siteNote": "※ 資訊由志工（僅 1 人）手動更新。",
+    "purposeTitle": "本站的建立目的",
+    "purposeDesc": "本站為個人運營的資訊分享網站，希望能讓更多人認識深影的活動，並為她提升創作動力盡一份心力。",
+    "howTitle": "頁籤使用說明",
+    "howStreamsTitle": "🎙 LiveStreaming Info",
+    "howStreamsDesc": "依次呈現各直播的歌單。依日期及直播名稱分組，點擊各直播可展開曲目列表。可透過 YouTube 連結直接跳轉至該直播，曲名右側的連結則可跳至該曲開始演唱的位置！",
+    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsDesc": "依曲目整合的統計數據。點擊欄位標題可依該欄排序。下方圖表可確認演唱次數排名、發行年份分布及原曲藝術家分布。",
+    "dataTitle": "關於資料",
+    "dataFormat": "資料格式",
+    "dataFormatVal": "CSV（以 GitHub 倉庫管理）",
+    "dataUpdate": "更新時間",
+    "dataUpdateVal": "每次直播結束後手動更新",
+    "dataCoverage": "收錄範圍",
+    "dataCoverageVal": "深影的歌唱直播及翻唱影片",
+    "dataCollab": "合唱直播",
+    "dataCollabVal": "也會記錄合唱嘉賓的名稱",
+    "linksTitle": "連結",
+    "linkYt": "▶ 深影 YouTube 頻道",
+    "linkX": "𝕏 深影 X（Twitter）",
+    "disclaimerTitle": "免責聲明",
+    "disclaimerText": "本站為個人運營，與 RK Music 及深影無關。雖盡力確保資訊正確，仍可能包含錯誤。若 RK Music 或深影提出下架要求，本站將立即因應。"
+  },
+  "changelog": {
+    "title": "更新記錄",
+    "entries": [
+      {
+        "date": "2026-04-01",
+        "items": ["非官方 uwo_ter／うを～た～の部屋 開站"]
+      }
+    ]
+  }
+}

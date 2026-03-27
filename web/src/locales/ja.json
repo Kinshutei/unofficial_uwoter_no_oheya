@@ -1,0 +1,81 @@
+{
+  "tab": {
+    "streams": "LiveStreaming Info",
+    "songs": "Uta-Mita DB",
+    "about": "About",
+    "changelog": "更新履歴"
+  },
+  "loading": "読み込み中...",
+  "error": "データの取得に失敗しました: {{error}}",
+  "lang": {
+    "ja": "日本語",
+    "en": "English",
+    "ko": "한국어",
+    "zhTW": "繁體中文"
+  },
+  "streams": {
+    "empty": "配信枠がまだ登録されていません。",
+    "searchPlaceholder": "曲名または原曲アーティストで検索...",
+    "searchHits": "{{count}} 件の枠がヒット",
+    "searchNoResults": "「{{query}}」を含む枠が見つかりませんでした。",
+    "expandAll": "▼ 全て開く",
+    "collapseAll": "▲ 全て閉じる",
+    "colSong": "楽曲名",
+    "colArtist": "原曲アーティスト",
+    "colUrl": "URL",
+    "colCollab": "コラボ相手様",
+    "openYouTube": "▶ YouTubeで開く",
+    "noThumbnail": "サムネイルなし",
+    "firstBadge": "初",
+    "openLink": "▶ 開く"
+  },
+  "songs": {
+    "empty": "曲がまだ登録されていません。",
+    "colSong": "楽曲名",
+    "colArtist": "原曲アーティスト",
+    "colLyrics": "作詞",
+    "colCompose": "作曲",
+    "colRelease": "リリース日",
+    "colCount": "歌唱回数",
+    "rankingTitle": "歌唱回数ランキング（上位20曲）",
+    "reset": "リセット",
+    "yearTitle": "リリース年度分布",
+    "artistTitle": "原曲アーティスト分布"
+  },
+  "about": {
+    "siteTitle": "このサイトについて",
+    "siteDesc1": "このサイトはRK Music所属のVSinger 深影（Mikage）さんの歌ってみた・配信情報をまとめたファンメイドのデータベースサイトです。",
+    "siteDesc2": "公式サイトではありませんので、掲載情報には誤りを含む場合がございます。RK Music及び深影さんへの直接のお問い合わせはなさらないようお願いいたします。ご質問等については、<link>白百合と金鷲亭(@WL_GE_inn)</link>までお問い合わせください。",
+    "siteNote": "※ 掲載情報は有志（若干1名）が手動で更新しています。",
+    "purposeTitle": "本サイトの構築目的",
+    "purposeDesc": "本サイトは個人が運営する情報発信サイトです。深影さんの活動をより多くの方に知っていただくこと、そして深影さんのモチベーション向上に少しでも貢献できればとの想いから開設しました。",
+    "howTitle": "タブの使い方",
+    "howStreamsTitle": "🎙 LiveStreaming Info",
+    "howStreamsDesc": "歌枠・配信ごとのセットリスト一覧です。配信日・枠名でグループ化され、各枠をクリックすると歌唱曲リストが展開します。YouTube リンクから該当配信へ直接移動でき、楽曲名の右側のリンクからはその歌が始まるあたりへ飛べます！",
+    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsDesc": "楽曲ごとの集計データです。列ヘッダーをクリックするとその列でソートできます。下部のグラフで歌唱回数ランキング・リリース年度分布・原曲アーティスト分布を確認できます。",
+    "dataTitle": "データについて",
+    "dataFormat": "データ形式",
+    "dataFormatVal": "CSV（GitHubリポジトリで管理）",
+    "dataUpdate": "更新タイミング",
+    "dataUpdateVal": "歌枠終了後に手動更新",
+    "dataCoverage": "収録範囲",
+    "dataCoverageVal": "深影の歌枠・歌ってみた動画",
+    "dataCollab": "コラボ枠",
+    "dataCollabVal": "コラボ相手様の名前も記録しています",
+    "linksTitle": "リンク",
+    "linkYt": "▶ 深影 YouTube チャンネル",
+    "linkX": "𝕏 深影 X（Twitter）",
+    "disclaimerTitle": "免責事項",
+    "disclaimerText": "本サイトは個人が運営するものであり、RK Music様および深影様とは無関係です。掲載情報の正確性は確保するよう努めておりますが、誤りを含む場合がございます。RK Music様および深影様より情報の削除を要請された場合は、速やかに対応いたします。"
+  },
+  "changelog": {
+    "title": "更新履歴",
+    "entries": [
+      {
+        "date": "2026-04-01",
+        "items": ["非公式うを～た～の部屋を開設"]
+      }
+    ]
+  }
+}

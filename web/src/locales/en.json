@@ -1,0 +1,81 @@
+{
+  "tab": {
+    "streams": "LiveStreaming Info",
+    "songs": "Uta-Mita DB",
+    "about": "About",
+    "changelog": "Changelog"
+  },
+  "loading": "Loading...",
+  "error": "Failed to load data: {{error}}",
+  "lang": {
+    "ja": "日本語",
+    "en": "English",
+    "ko": "한국어",
+    "zhTW": "繁體中文"
+  },
+  "streams": {
+    "empty": "No streams registered yet.",
+    "searchPlaceholder": "Search by song title or original artist...",
+    "searchHits": "{{count}} stream(s) found",
+    "searchNoResults": "No streams found containing \"{{query}}\".",
+    "expandAll": "▼ Expand All",
+    "collapseAll": "▲ Collapse All",
+    "colSong": "Song Title",
+    "colArtist": "Original Artist",
+    "colUrl": "URL",
+    "colCollab": "Collaborator",
+    "openYouTube": "▶ Open on YouTube",
+    "noThumbnail": "No thumbnail",
+    "firstBadge": "1st",
+    "openLink": "▶ Open"
+  },
+  "songs": {
+    "empty": "No songs registered yet.",
+    "colSong": "Song Title",
+    "colArtist": "Original Artist",
+    "colLyrics": "Lyrics",
+    "colCompose": "Composer",
+    "colRelease": "Release Date",
+    "colCount": "Times Sung",
+    "rankingTitle": "Top 20 Most Sung Songs",
+    "reset": "Reset",
+    "yearTitle": "Release Year Distribution",
+    "artistTitle": "Original Artist Distribution"
+  },
+  "about": {
+    "siteTitle": "About This Site",
+    "siteDesc1": "This is a fan-made database site covering the song covers and streaming information of RK Music VSinger Mikage.",
+    "siteDesc2": "This is not an official site, and the information may contain errors. Please do not contact RK Music or Mikage directly. For inquiries, please contact <link>Shirayuri to Kinwashi-tei (@WL_GE_inn)</link>.",
+    "siteNote": "※ Information is manually updated by a volunteer (just one person).",
+    "purposeTitle": "Purpose of This Site",
+    "purposeDesc": "This site is a personally operated information site, created with the hope of introducing Mikage's activities to more people and contributing to her motivation.",
+    "howTitle": "How to Use the Tabs",
+    "howStreamsTitle": "🎙 LiveStreaming Info",
+    "howStreamsDesc": "A setlist for each stream session. Sessions are grouped by date and name. Click a session to expand its song list. The YouTube link takes you directly to the stream, and the link next to each song title jumps to around where that song starts!",
+    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsDesc": "Aggregated data by song. Click column headers to sort. The graphs below show the singing count ranking, release year distribution, and original artist distribution.",
+    "dataTitle": "About the Data",
+    "dataFormat": "Format",
+    "dataFormatVal": "CSV (managed in GitHub repository)",
+    "dataUpdate": "Update timing",
+    "dataUpdateVal": "Manually updated after each stream",
+    "dataCoverage": "Coverage",
+    "dataCoverageVal": "Mikage's singing streams and cover videos",
+    "dataCollab": "Collab streams",
+    "dataCollabVal": "Collaborator names are also recorded",
+    "linksTitle": "Links",
+    "linkYt": "▶ Mikage YouTube Channel",
+    "linkX": "𝕏 Mikage X (Twitter)",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerText": "This site is personally operated and is unrelated to RK Music or Mikage. While we strive to ensure accuracy, errors may be present. If RK Music or Mikage requests removal of any information, we will respond promptly."
+  },
+  "changelog": {
+    "title": "Changelog",
+    "entries": [
+      {
+        "date": "2026-04-01",
+        "items": ["Launched the unofficial uwo_ter / wouca fan site"]
+      }
+    ]
+  }
+}

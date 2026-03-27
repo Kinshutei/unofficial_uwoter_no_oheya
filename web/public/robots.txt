@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kinshutei.github.io/unofficial_uwoter_no_oheya/sitemap.xml
