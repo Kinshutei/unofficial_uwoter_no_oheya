@@ -349,7 +349,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
                     className={`pickup-card${v.isNewRelease ? ' new-release' : ''}`}
                   >
                     {v.isNewRelease && (
-                      <span className="new-release-badge">New Release</span>
+                      <span className="new-release-badge">PICKUP!!!</span>
                     )}
                     <div className="pickup-embed-wrap">
                       <iframe
