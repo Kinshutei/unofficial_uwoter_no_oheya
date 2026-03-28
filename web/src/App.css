@@ -347,6 +347,51 @@ h3 {
 .songs-table th:nth-child(7), .songs-table td:nth-child(7) { min-width:  80px; }
 .songs-table tr:hover td { background: var(--bg-3); }
 
+/* ── コンテンツセクション ── */
+.contents-section {
+  padding: 60px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contents-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--steel);
+  margin-bottom: 24px;
+}
+
+.contents-divider {
+  border: none;
+  border-top: 1px solid #243447;
+  margin: 48px 0;
+}
+
+.short-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.short-card { position: relative; }
+
+.short-embed-wrap {
+  position: relative;
+  padding-top: 177.78%;
+  background: #0a1520;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.short-embed-wrap .pickup-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* ── ピックアップ ── */
 .pickup-section {
   padding: 72px 56px;

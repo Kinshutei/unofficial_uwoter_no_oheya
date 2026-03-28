@@ -17,23 +17,23 @@ const SONG_MASTER_URL =
   import.meta.env.VITE_MASTER_URL ??
   'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/rkmusic_song_master.csv'
 
-const PICKUP_URL =
-  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/wouca_pickup.json'
-
-const NEW_RELEASE_URL =
-  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/wouca_new_release.json'
+const CONTENTS_URL =
+  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/wouca_contents.json'
 
 type ContentTab = 'streams' | 'songs' | null
 type ModalType  = null | 'about' | 'changelog'
 
-interface PickupVideo {
-  video_id:      string
-  title:         string
-  published?:    string
-  increase_rate?: number
-  note?:         string
-  updated?:      string
-  isNewRelease?: boolean
+interface ContentVideo {
+  video_id: string
+  title:    string
+  note?:    string
+}
+
+interface Contents {
+  pickup:       ContentVideo[]
+  original:     ContentVideo[]
+  short:        ContentVideo[]
+  livestreaming: ContentVideo[]
 }
 
 const LANGS = [
@@ -59,8 +59,7 @@ export default function App() {
   const [error,       setError]       = useState<string | null>(null)
   const [activeTab,   setActiveTab]   = useState<ContentTab>(null)
   const [modal,       setModal]       = useState<ModalType>(null)
-  const [pickup,      setPickup]      = useState<PickupVideo[]>([])
-  const [newRelease,  setNewRelease]  = useState<PickupVideo | null>(null)
+  const [contents, setContents] = useState<Contents>({ pickup: [], original: [], short: [], livestreaming: [] })
   const [selectedLang, setSelectedLang] = useState<string>(() => {
     const stored = localStorage.getItem('lang') ?? ''
     return LANGS.some(l => l.value === stored) ? stored : 'ja'
@@ -98,15 +97,16 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
     fetchAll()
   }, [])
 
-  /* ── ピックアップデータ取得 ── */
+  /* ── コンテンツデータ取得 ── */
   useEffect(() => {
-    fetch(PICKUP_URL)
+    fetch(CONTENTS_URL)
       .then(r => r.json())
-      .then(d => setPickup(d.pickup || []))
-      .catch(() => {})
-    fetch(NEW_RELEASE_URL)
-      .then(r => r.json())
-      .then(d => setNewRelease({ ...d, isNewRelease: true }))
+      .then(d => setContents({
+        pickup:        d.pickup        || [],
+        original:      d.original      || [],
+        short:         d.short         || [],
+        livestreaming: d.livestreaming || [],
+      }))
       .catch(() => {})
   }, [])
 
@@ -234,11 +234,6 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const allPickup: PickupVideo[] = [
-    ...(newRelease ? [newRelease] : []),
-    ...pickup,
-  ]
-
   return (
     <>
       {/* ── ヘッダー ── */}
@@ -338,34 +333,66 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
             </div>
           </section>
 
-          {/* ── ピックアップ Movie ── */}
-          {allPickup.length > 0 && (
-            <section className="pickup-section">
-              <h2 className="pickup-heading">PICKUP contents</h2>
-              <div className="pickup-grid">
-                {allPickup.map(v => (
-                  <div
-                    key={v.video_id}
-                    className={`pickup-card${v.isNewRelease ? ' new-release' : ''}`}
-                  >
-                    {v.isNewRelease && (
-                      <span className="new-release-badge">PICKUP!!!</span>
-                    )}
-                    <div className="pickup-embed-wrap">
-                      <iframe
-                        className="pickup-embed"
-                        src={`https://www.youtube.com/embed/${v.video_id}`}
-                        title={v.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                    <p className="pickup-card-title">{v.title}</p>
+          {/* ── コンテンツセクション ── */}
+          <section className="contents-section">
+            <h2 className="contents-heading">PICKUP contents</h2>
+            <div className="pickup-grid">
+              {contents.pickup.map((v: ContentVideo) => (
+                <div key={v.video_id} className="pickup-card">
+                  {v.note && <span className="new-release-badge">{v.note}</span>}
+                  <div className="pickup-embed-wrap">
+                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                   </div>
-                ))}
-              </div>
-            </section>
-          )}
+                  <p className="pickup-card-title">{v.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="contents-divider" />
+
+            <h2 className="contents-heading">Original Song</h2>
+            <div className="pickup-grid">
+              {contents.original.map((v: ContentVideo) => (
+                <div key={v.video_id} className="pickup-card">
+                  {v.note && <span className="new-release-badge">{v.note}</span>}
+                  <div className="pickup-embed-wrap">
+                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  </div>
+                  <p className="pickup-card-title">{v.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="contents-divider" />
+
+            <h2 className="contents-heading">Short</h2>
+            <div className="short-grid">
+              {contents.short.map((v: ContentVideo) => (
+                <div key={v.video_id} className="short-card">
+                  {v.note && <span className="new-release-badge">{v.note}</span>}
+                  <div className="short-embed-wrap">
+                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  </div>
+                  <p className="pickup-card-title">{v.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="contents-divider" />
+
+            <h2 className="contents-heading">LiveStreaming</h2>
+            <div className="pickup-grid">
+              {contents.livestreaming.map((v: ContentVideo) => (
+                <div key={v.video_id} className="pickup-card">
+                  {v.note && <span className="new-release-badge">{v.note}</span>}
+                  <div className="pickup-embed-wrap">
+                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  </div>
+                  <p className="pickup-card-title">{v.title}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </>
       )}
 
