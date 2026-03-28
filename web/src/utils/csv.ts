@@ -24,8 +24,12 @@ export function parseSongMaster(text: string): Map<string, SongMaster> {
       原曲アーティスト_en: row['原曲アーティスト_en'] || undefined,
       原曲アーティスト_ko: row['原曲アーティスト_ko'] || undefined,
       原曲アーティスト_zh: row['原曲アーティスト_zh'] || undefined,
-      作詞:               row['作詞'] ?? '',
-      作曲:               row['作曲'] ?? '',
+      作詞1:              row['作詞1'] ?? '',
+      作詞2:              row['作詞2'] ?? '',
+      作曲1:              row['作曲1'] ?? '',
+      作曲2:              row['作曲2'] ?? '',
+      編曲1:              row['編曲1'] ?? '',
+      編曲2:              row['編曲2'] ?? '',
       リリース日:         row['リリース日'] ?? '',
     })
   }
@@ -64,8 +68,12 @@ export function parseCSV(
       原曲Artist_en:     master?.原曲アーティスト_en,
       原曲Artist_ko:     master?.原曲アーティスト_ko,
       原曲Artist_zh:     master?.原曲アーティスト_zh,
-      作詞:              master?.作詞 ?? row['作詞'] ?? '',
-      作曲:              master?.作曲 ?? row['作曲'] ?? '',
+      作詞1:             master?.作詞1 ?? row['作詞1'] ?? '',
+      作詞2:             master?.作詞2 ?? row['作詞2'] ?? '',
+      作曲1:             master?.作曲1 ?? row['作曲1'] ?? '',
+      作曲2:             master?.作曲2 ?? row['作曲2'] ?? '',
+      編曲1:             master?.編曲1 ?? row['編曲1'] ?? '',
+      編曲2:             master?.編曲2 ?? row['編曲2'] ?? '',
       リリース日:        master?.リリース日 ?? row['リリース日'] ?? '',
     }
   })
@@ -105,8 +113,12 @@ export function aggregateSongs(records: StreamingRecord[]): SongStat[] {
       if (!existing.原曲アーティスト_en && r.原曲Artist_en) existing.原曲アーティスト_en = r.原曲Artist_en
       if (!existing.原曲アーティスト_ko && r.原曲Artist_ko) existing.原曲アーティスト_ko = r.原曲Artist_ko
       if (!existing.原曲アーティスト_zh && r.原曲Artist_zh) existing.原曲アーティスト_zh = r.原曲Artist_zh
-      if (!existing.作詞 && r.作詞) existing.作詞 = r.作詞
-      if (!existing.作曲 && r.作曲) existing.作曲 = r.作曲
+      if (!existing.作詞1 && r.作詞1) existing.作詞1 = r.作詞1
+      if (!existing.作詞2 && r.作詞2) existing.作詞2 = r.作詞2
+      if (!existing.作曲1 && r.作曲1) existing.作曲1 = r.作曲1
+      if (!existing.作曲2 && r.作曲2) existing.作曲2 = r.作曲2
+      if (!existing.編曲1 && r.編曲1) existing.編曲1 = r.編曲1
+      if (!existing.編曲2 && r.編曲2) existing.編曲2 = r.編曲2
       if (!existing.リリース日 && r.リリース日) {
         existing.リリース日 = r.リリース日
         existing.リリース年 = toReleaseYear(r.リリース日)
@@ -121,8 +133,12 @@ export function aggregateSongs(records: StreamingRecord[]): SongStat[] {
         原曲アーティスト_en: r.原曲Artist_en,
         原曲アーティスト_ko: r.原曲Artist_ko,
         原曲アーティスト_zh: r.原曲Artist_zh,
-        作詞:                r.作詞,
-        作曲:                r.作曲,
+        作詞1:               r.作詞1,
+        作詞2:               r.作詞2,
+        作曲1:               r.作曲1,
+        作曲2:               r.作曲2,
+        編曲1:               r.編曲1,
+        編曲2:               r.編曲2,
         リリース日:          r.リリース日,
         リリース年:          toReleaseYear(r.リリース日),
         歌唱回数:            1,

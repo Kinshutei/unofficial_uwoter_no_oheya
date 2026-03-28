@@ -43,8 +43,9 @@ export default function SongsTab({ records }: Props) {
   const COLUMNS: { key: SortKey; label: string }[] = [
     { key: '楽曲名',         label: t('songs.colSong') },
     { key: '原曲アーティスト', label: t('songs.colArtist') },
-    { key: '作詞',           label: t('songs.colLyrics') },
-    { key: '作曲',           label: t('songs.colCompose') },
+    { key: '作詞1',          label: t('songs.colLyrics') },
+    { key: '作曲1',          label: t('songs.colCompose') },
+    { key: '編曲1',          label: t('songs.colArrange') },
     { key: 'リリース日',     label: t('songs.colRelease') },
     { key: '歌唱回数',       label: t('songs.colCount') },
   ]
@@ -122,8 +123,9 @@ export default function SongsTab({ records }: Props) {
               <tr key={i}>
                 <td>{localizeField(s.楽曲名, s.楽曲名_en, s.楽曲名_ko, s.楽曲名_zh, lang)}</td>
                 <td style={{ color: '#666' }}>{localizeField(s.原曲アーティスト, s.原曲アーティスト_en, s.原曲アーティスト_ko, s.原曲アーティスト_zh, lang)}</td>
-                <td style={{ color: '#666' }}>{s.作詞}</td>
-                <td style={{ color: '#666' }}>{s.作曲}</td>
+                <td style={{ color: '#666' }}>{s.作詞1}{s.作詞2 && <><br /><span style={{ color: '#888' }}>{s.作詞2}</span></>}</td>
+                <td style={{ color: '#666' }}>{s.作曲1}{s.作曲2 && <><br /><span style={{ color: '#888' }}>{s.作曲2}</span></>}</td>
+                <td style={{ color: '#666' }}>{s.編曲1}{s.編曲2 && <><br /><span style={{ color: '#888' }}>{s.編曲2}</span></>}</td>
                 <td style={{ color: '#666' }}>{s.リリース日}</td>
                 <td style={{ textAlign: 'center', fontWeight: 600, color: '#3a7a7b' }}>{s.歌唱回数}</td>
               </tr>

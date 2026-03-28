@@ -8,8 +8,12 @@ export interface SongMaster {
   原曲アーティスト_en?: string
   原曲アーティスト_ko?: string
   原曲アーティスト_zh?: string
-  作詞: string
-  作曲: string
+  作詞1: string
+  作詞2: string
+  作曲1: string
+  作曲2: string
+  編曲1: string
+  編曲2: string
   リリース日: string
 }
 
@@ -30,8 +34,12 @@ export interface StreamingRecord {
   原曲Artist_en?: string
   原曲Artist_ko?: string
   原曲Artist_zh?: string
-  作詞: string
-  作曲: string
+  作詞1: string
+  作詞2: string
+  作曲1: string
+  作曲2: string
+  編曲1: string
+  編曲2: string
   リリース日: string
 }
 
@@ -50,8 +58,12 @@ export interface SongStat {
   原曲アーティスト_en?: string
   原曲アーティスト_ko?: string
   原曲アーティスト_zh?: string
-  作詞: string
-  作曲: string
+  作詞1: string
+  作詞2: string
+  作曲1: string
+  作曲2: string
+  編曲1: string
+  編曲2: string
   リリース日: string
   リリース年: string
   歌唱回数: number
