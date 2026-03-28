@@ -1,6 +1,78 @@
 {
-  "pickup": [],
-  "original": [],
-  "short": [],
-  "livestreaming": []
+  "pickup": [
+    {
+      "video_id": "qpNMlxGD1Uw",
+      "title": "Romantica - wouca (Official Music Video)"
+    },
+    {
+      "video_id": "gCvCO9CCxek",
+      "title": "LADY / 米津玄師 (Covered by wouca)"
+    },
+    {
+      "video_id": "cVIcIr6PsLM",
+      "title": "fake face dance music - 音田雅則 (Cover) / wouca"
+    },
+    {
+      "video_id": "4ZK_Y1LTbDs",
+      "title": "【コラボ歌枠】優しく溶け合う二人の歌声を、聴いてみませんか？【羽緒 / wouca : RK Music】#はおうか"
+    },
+    {
+      "video_id": "225cCOU5Mz4",
+      "title": "【#愛をつなぐ歌枠リレー】いろんな「愛」のかたちを歌って繋ごウカ✽【wouca : RK Music】"
+    }
+  ],
+  "original": [
+    {
+      "video_id": "qpNMlxGD1Uw",
+      "title": "Romantica - wouca (Official Music Video)"
+    }
+  ],
+  "short": [
+    {
+      "video_id": "p5MjyjP1JVg",
+      "title": "JANE DOE / 米津玄師, 宇多田ヒカル [Cover] 『チェンソーマン レゼ篇』#shorts #歌ってみた #wouca"
+    },
+    {
+      "video_id": "BYuT-5eDKU4",
+      "title": "【アカペラ】アワータイムイエロー / ReGLOSS [Cover] #shorts #歌ってみた #acapella #wouca"
+    },
+    {
+      "video_id": "ci9iO4n28_Q",
+      "title": "もらい泣き / 一青窈 を歌わせていただきました #shorts #vsinger #歌ってみた #切り抜き"
+    },
+    {
+      "video_id": "0ywTC_5Ar_0",
+      "title": "ねむるまち / feat.yama [Cover] #shorts #歌ってみた #wouca"
+    },
+    {
+      "video_id": "AvykruN9gS4",
+      "title": "祝✽3Dモデル＆1st Original「Romantica」が配信開始されました～✽ #shorts #vsinger #wouca"
+    }
+  ],
+  "livestreaming": [
+    {
+      "video_id": "WurOC6M8L-g",
+      "title": "【初配信 : #RKMusic歌枠リレー】本日Debutのヲウカ歌います。みんなと楽しむ✲【#wouca : RK Music】"
+    },
+    {
+      "video_id": "4XeC9DY3TSw",
+      "title": "【歌枠】8200人を目指してたっぷ～り歌ウ耐久✲【wouca : RK Music】#utawouca 08 / #shorts #vtuber #vsinger"
+    },
+    {
+      "video_id": "xTKfkbApPQg",
+      "title": "【歌枠】祝・メンバーシップ解禁🥂感謝を歌ヲウ✽【wouca : RK Music】#utawouca 09"
+    },
+    {
+      "video_id": "UECfV1X2SAw",
+      "title": "【#魂の灯り歌枠リレー】テーマは \"躍心 (やくしん)\" 思わず踊りたくなるような曲を歌ヲウカ✽【wouca : RK Music】#karaoke"
+    },
+    {
+      "video_id": "225cCOU5Mz4",
+      "title": "【#愛をつなぐ歌枠リレー】いろんな「愛」のかたちを歌って繋ごウカ✽【wouca : RK Music】"
+    },
+    {
+      "video_id": "4ZK_Y1LTbDs",
+      "title": "【コラボ歌枠】優しく溶け合う二人の歌声を、聴いてみませんか？【羽緒 / wouca : RK Music】#はおうか"
+    }
+  ]
 }
