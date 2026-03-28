@@ -372,10 +372,11 @@ h3 {
   gap: 16px;
 }
 
-.short-card { position: relative; }
+.short-card { position: relative; min-width: 0; width: 100%; }
 
 .short-embed-wrap {
   position: relative;
+  width: 100%;
   padding-top: 177.78%;
   background: #0a1520;
   border-radius: 6px;
