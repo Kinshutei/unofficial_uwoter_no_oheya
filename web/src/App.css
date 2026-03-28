@@ -350,8 +350,6 @@ h3 {
 /* ── コンテンツセクション ── */
 .contents-section {
   padding: 60px 48px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .contents-heading {
@@ -370,7 +368,7 @@ h3 {
 
 .short-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
