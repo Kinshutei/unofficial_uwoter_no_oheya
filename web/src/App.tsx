@@ -239,7 +239,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
       {/* ── ヘッダー ── */}
       <header className="site-header">
         <div className="header-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-          <img src={LOGO_URL} alt="wouca" className="logo-img" />
+          <div className="logo-img" style={{ backgroundImage: `url(${LOGO_URL})` }} />
         </div>
         <nav className="header-nav">
           <a
