@@ -399,6 +399,15 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
       {/* ── コンテンツページ（タブ選択時） ── */}
       {activeTab !== null && (
         <main className="main-content">
+          {activeTab === 'streams' && (
+            <button
+              className="close-tab-btn"
+              onClick={() => setActiveTab(null)}
+            >
+              <span className="close-default">× CLOSE LIVESTREAMING</span>
+              <span className="close-hover">&gt;&gt;&gt; BACK TO HOME</span>
+            </button>
+          )}
           {loading && <p className="status-text">{t('loading')}</p>}
           {error   && <p className="status-text error">{t('error', { error })}</p>}
           {!loading && !error && activeTab === 'streams' && <StreamsTab records={records} />}
