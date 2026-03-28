@@ -70,8 +70,7 @@ export default function App() {
   const videoBRef     = useRef<HTMLVideoElement>(null)
   const indexRef      = useRef(0)
   const activeRef     = useRef<'a' | 'b'>('a')
-  const contentRef    = useRef<HTMLDivElement>(null)
-  const canvasRef     = useRef<HTMLCanvasElement>(null)
+const canvasRef     = useRef<HTMLCanvasElement>(null)
   const mouseRef      = useRef<{ x: number; y: number } | null>(null)
   const glitchAnimRef = useRef<number>(0)
 
@@ -227,9 +226,12 @@ export default function App() {
 
   const handleTabClick = (tab: ContentTab) => {
     setActiveTab(tab)
-    setTimeout(() => {
-      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 50)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleLogoClick = () => {
+    setActiveTab(null)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const allPickup: PickupVideo[] = [
@@ -241,7 +243,7 @@ export default function App() {
     <>
       {/* ── ヘッダー ── */}
       <header className="site-header">
-        <div className="header-logo">
+        <div className="header-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
           <img src={LOGO_URL} alt="wouca" className="logo-img" />
         </div>
         <nav className="header-nav">
@@ -279,96 +281,102 @@ export default function App() {
         </div>
       </header>
 
-      {/* ── ヒーロー動画 ── */}
-      <section
-        className="hero-section"
-        onMouseMove={e => {
-          const rect = e.currentTarget.getBoundingClientRect()
-          mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
-        }}
-        onMouseLeave={() => { mouseRef.current = null }}
-        onContextMenu={e => e.preventDefault()}
-      >
-        <video ref={videoARef} className="hero-video" src={VIDEOS[0]} autoPlay muted playsInline />
-        <video ref={videoBRef} className="hero-video" muted playsInline />
-        <canvas ref={canvasRef} className="hero-glitch-canvas" />
-      </section>
+      {/* ── ランディングページ（タブ未選択時のみ） ── */}
+      {activeTab === null && (
+        <>
+          <section
+            className="hero-section"
+            onMouseMove={e => {
+              const rect = e.currentTarget.getBoundingClientRect()
+              mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
+            }}
+            onMouseLeave={() => { mouseRef.current = null }}
+            onContextMenu={e => e.preventDefault()}
+          >
+            <video ref={videoARef} className="hero-video" src={VIDEOS[0]} autoPlay muted playsInline />
+            <video ref={videoBRef} className="hero-video" muted playsInline />
+            <canvas ref={canvasRef} className="hero-glitch-canvas" />
+          </section>
 
-      {/* ── フィルター / タブ ── */}
-      <section className="filter-section">
-        <div className="filter-left">
-          <p className="filter-tagline"><span className="filter-tagline-prefix"><span>+</span><span>++</span></span>unofficial / uwo_ter's room</p>
-          <p className="filter-sub">We love wouca / everybody's crazy about her</p>
-        </div>
-        <div className="filter-right">
-          <button
-            className={`filter-item${activeTab === 'streams' ? ' active' : ''}`}
-            onClick={() => handleTabClick('streams')}
-          >
-            <span className="filter-item-name">LiveStreaming Info</span>
-          </button>
-          <button
-            className={`filter-item${activeTab === 'songs' ? ' active' : ''}`}
-            onClick={() => handleTabClick('songs')}
-          >
-            <span className="filter-item-name">Sung Repertoire</span>
-          </button>
-          <a
-            href="https://shop.reality-studios.inc/collections/wouca"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="filter-item filter-item-link"
-          >
-            <span className="filter-item-name">Official SHOP LINK</span>
-            <span className="filter-item-arrow">↗</span>
-          </a>
-          <a
-            href="https://rkmusic.booth.pm/item_lists/nqXTgA1O"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="filter-item filter-item-link"
-          >
-            <span className="filter-item-name">BOOTH LINK</span>
-            <span className="filter-item-arrow">↗</span>
-          </a>
-        </div>
-      </section>
-
-      {/* ── メインコンテンツ ── */}
-      <main className="main-content" ref={contentRef}>
-        {loading  && <p className="status-text">{t('loading')}</p>}
-        {error    && <p className="status-text error">{t('error', { error })}</p>}
-        {!loading && !error && activeTab === 'streams' && <StreamsTab records={records} />}
-        {!loading && !error && activeTab === 'songs'   && <SongsTab   records={records} />}
-      </main>
-
-      {/* ── ピックアップ Movie ── */}
-      {allPickup.length > 0 && (
-        <section className="pickup-section">
-          <h2 className="pickup-heading">PICKUP MOVIE</h2>
-          <div className="pickup-grid">
-            {allPickup.map(v => (
-              <div
-                key={v.video_id}
-                className={`pickup-card${v.isNewRelease ? ' new-release' : ''}`}
+          {/* ── フィルター / タブ ── */}
+          <section className="filter-section">
+            <div className="filter-left">
+              <p className="filter-tagline"><span className="filter-tagline-prefix"><span>+</span><span>++</span></span>unofficial / uwo_ter's aquarium</p>
+              <p className="filter-sub">We love wouca / everybody's crazy about her</p>
+            </div>
+            <div className="filter-right">
+              <button
+                className="filter-item"
+                onClick={() => handleTabClick('streams')}
               >
-                {v.isNewRelease && (
-                  <span className="new-release-badge">New Release</span>
-                )}
-                <div className="pickup-embed-wrap">
-                  <iframe
-                    className="pickup-embed"
-                    src={`https://www.youtube.com/embed/${v.video_id}`}
-                    title={v.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-                <p className="pickup-card-title">{v.title}</p>
+                <span className="filter-item-name">LiveStreaming Info</span>
+              </button>
+              <button
+                className="filter-item"
+                onClick={() => handleTabClick('songs')}
+              >
+                <span className="filter-item-name">Sung Repertoire</span>
+              </button>
+              <a
+                href="https://shop.reality-studios.inc/collections/wouca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="filter-item filter-item-link"
+              >
+                <span className="filter-item-name">Official SHOP LINK</span>
+                <span className="filter-item-arrow">↗</span>
+              </a>
+              <a
+                href="https://rkmusic.booth.pm/item_lists/nqXTgA1O"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="filter-item filter-item-link"
+              >
+                <span className="filter-item-name">BOOTH LINK</span>
+                <span className="filter-item-arrow">↗</span>
+              </a>
+            </div>
+          </section>
+
+          {/* ── ピックアップ Movie ── */}
+          {allPickup.length > 0 && (
+            <section className="pickup-section">
+              <h2 className="pickup-heading">PICKUP contents</h2>
+              <div className="pickup-grid">
+                {allPickup.map(v => (
+                  <div
+                    key={v.video_id}
+                    className={`pickup-card${v.isNewRelease ? ' new-release' : ''}`}
+                  >
+                    {v.isNewRelease && (
+                      <span className="new-release-badge">New Release</span>
+                    )}
+                    <div className="pickup-embed-wrap">
+                      <iframe
+                        className="pickup-embed"
+                        src={`https://www.youtube.com/embed/${v.video_id}`}
+                        title={v.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                    <p className="pickup-card-title">{v.title}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
+          )}
+        </>
+      )}
+
+      {/* ── コンテンツページ（タブ選択時） ── */}
+      {activeTab !== null && (
+        <main className="main-content">
+          {loading && <p className="status-text">{t('loading')}</p>}
+          {error   && <p className="status-text error">{t('error', { error })}</p>}
+          {!loading && !error && activeTab === 'streams' && <StreamsTab records={records} />}
+          {!loading && !error && activeTab === 'songs'   && <SongsTab   records={records} />}
+        </main>
       )}
 
       {/* ── モーダル（About / 更新履歴） ── */}
