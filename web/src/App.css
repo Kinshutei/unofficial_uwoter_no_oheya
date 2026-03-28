@@ -408,6 +408,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-left: -48px;
+  margin-right: -48px;
 }
 .pickup-card {
   background: var(--bg-2);
