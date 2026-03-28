@@ -59,6 +59,7 @@ export function parseCSV(
       配信日:            normalizeDate(row['配信日'] ?? ''),
       枠URL:             row['枠URL'] ?? '',
       コラボ相手様:      row['コラボ相手様'] ?? 'なし',
+      キー:              row['キー']?.trim() ?? '',
       原曲Artist:        master?.原曲アーティスト ?? row['原曲Artist'] ?? '',
       原曲Artist_en:     master?.原曲アーティスト_en,
       原曲Artist_ko:     master?.原曲アーティスト_ko,

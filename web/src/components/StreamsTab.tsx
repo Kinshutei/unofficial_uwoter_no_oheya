@@ -206,6 +206,7 @@ function StreamExpander({ label, forceOpen, defaultOpen, thumbUrl, cleanUrl, set
                     <th>#</th>
                     <th>{t('streams.colSong')}</th>
                     <th>{t('streams.colArtist')}</th>
+                    <th>{t('streams.colKey')}</th>
                     <th>{t('streams.colUrl')}</th>
                     {showCollab && <th>{t('streams.colCollab')}</th>}
                   </tr>
@@ -237,6 +238,7 @@ function StreamExpander({ label, forceOpen, defaultOpen, thumbUrl, cleanUrl, set
                           })()}
                         </td>
                         <td style={{ color: hitArtist ? '#6b9fd4' : '#888888', fontWeight: hitArtist ? 600 : undefined }}>{displayArtist}</td>
+                        <td style={{ color: '#aaaaaa', fontSize: '12px', whiteSpace: 'nowrap' }}>{r.キー}</td>
                         <td>
                           {r.枠URL && (
                             <a href={r.枠URL} target="_blank" rel="noopener noreferrer" style={{ color: '#5a7fa8' }}>

@@ -219,7 +219,7 @@ h3 {
 
 /* ── メインコンテンツ ── */
 .main-content {
-  padding: 56px 56px;
+  padding: 100px 100px;
   min-height: 480px;
 }
 .status-text { color: var(--text-muted); }

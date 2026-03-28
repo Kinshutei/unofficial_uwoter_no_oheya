@@ -24,6 +24,7 @@ export interface StreamingRecord {
   配信日: string
   枠URL: string
   コラボ相手様: string
+  キー: string
   // マスターから JOIN されるフィールド
   原曲Artist: string
   原曲Artist_en?: string

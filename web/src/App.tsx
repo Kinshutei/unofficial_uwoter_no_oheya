@@ -11,7 +11,7 @@ import './App.css'
 
 const STREAMING_CSV_URL =
   import.meta.env.VITE_CSV_URL ??
-  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/streaminginfo_wouca.csv'
+  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/streaming_info.csv'
 
 const SONG_MASTER_URL =
   import.meta.env.VITE_MASTER_URL ??
