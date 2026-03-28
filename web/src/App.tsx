@@ -399,7 +399,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
       {/* ── コンテンツページ（タブ選択時） ── */}
       {activeTab !== null && (
         <main className="main-content">
-          {activeTab === 'streams' && (
+          {(activeTab === 'streams' || activeTab === 'songs') && (
             <button
               className="close-tab-btn"
               onClick={() => setActiveTab(null)}
