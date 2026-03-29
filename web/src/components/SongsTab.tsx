@@ -28,6 +28,13 @@ function sortSongs(songs: SongStat[], key: SortKey, dir: SortDir): SongStat[] {
   })
 }
 
+const treeColorscale: [number, string][] = [
+  [0.0, '#0f1923'],
+  [0.4, '#1a2738'],
+  [0.7, '#3b5c8a'],
+  [1.0, '#8fa8c0'],
+]
+
 export default function SongsTab({ records }: Props) {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
@@ -35,7 +42,7 @@ export default function SongsTab({ records }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('歌唱回数')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const sortedSongs = useMemo(() => sortSongs(songs, sortKey, sortDir), [songs, sortKey, sortDir])
-  const top20 = songs.slice(0, 20)
+  const top20 = useMemo(() => songs.slice(0, 20), [songs])
   const [barKey, setBarKey] = useState(0)
   const [treeKey, setTreeKey] = useState(0)
   const [treeKey2, setTreeKey2] = useState(0)
@@ -50,31 +57,38 @@ export default function SongsTab({ records }: Props) {
     { key: '歌唱回数',       label: t('songs.colCount') },
   ]
 
-  const maxCount = top20[0]?.歌唱回数 ?? 1
-  const barColors = top20.map((s) => `rgba(59,92,138,${0.35 + 0.65 * (s.歌唱回数 / maxCount)})`)
+  const barColors = useMemo(() => {
+    const maxCount = top20[0]?.歌唱回数 ?? 1
+    return top20.map((s) => `rgba(59,92,138,${0.35 + 0.65 * (s.歌唱回数 / maxCount)})`)
+  }, [top20])
 
-  const yearMap = new Map<string, number>()
-  for (const s of songs) {
-    if (!s.リリース年) continue
-    yearMap.set(s.リリース年, (yearMap.get(s.リリース年) ?? 0) + 1)
-  }
-  const years = Array.from(yearMap.entries()).sort((a, b) => a[0].localeCompare(b[0]))
+  const years = useMemo(() => {
+    const yearMap = new Map<string, number>()
+    for (const s of songs) {
+      if (!s.リリース年) continue
+      yearMap.set(s.リリース年, (yearMap.get(s.リリース年) ?? 0) + 1)
+    }
+    return Array.from(yearMap.entries()).sort((a, b) => a[0].localeCompare(b[0]))
+  }, [songs])
 
   // アーティスト集計（ローカライズ対応）
-  const artistMap = new Map<string, { count: number; displayName: string }>()
-  for (const s of songs) {
-    const jaArtist = s.原曲アーティスト?.trim()
-    if (!jaArtist) continue
-    const displayArtist = localizeField(s.原曲アーティスト, s.原曲アーティスト_en, s.原曲アーティスト_ko, s.原曲アーティスト_zh, lang)
-    const existing = artistMap.get(jaArtist)
-    if (existing) {
-      existing.count += s.歌唱回数
-    } else {
-      artistMap.set(jaArtist, { count: s.歌唱回数, displayName: displayArtist })
+  const { artists, artistTotal } = useMemo(() => {
+    const artistMap = new Map<string, { count: number; displayName: string }>()
+    for (const s of songs) {
+      const jaArtist = s.原曲アーティスト?.trim()
+      if (!jaArtist) continue
+      const displayArtist = localizeField(s.原曲アーティスト, s.原曲アーティスト_en, s.原曲アーティスト_ko, s.原曲アーティスト_zh, lang)
+      const existing = artistMap.get(jaArtist)
+      if (existing) {
+        existing.count += s.歌唱回数
+      } else {
+        artistMap.set(jaArtist, { count: s.歌唱回数, displayName: displayArtist })
+      }
     }
-  }
-  const artists = Array.from(artistMap.values()).sort((a, b) => b.count - a.count)
-  const artistTotal = artists.reduce((sum, a) => sum + a.count, 0)
+    const artists = Array.from(artistMap.values()).sort((a, b) => b.count - a.count)
+    const artistTotal = artists.reduce((sum, a) => sum + a.count, 0)
+    return { artists, artistTotal }
+  }, [songs, lang])
 
   if (records.length === 0) {
     return <p style={{ color: '#888', padding: '1rem' }}>{t('songs.empty')}</p>
@@ -93,13 +107,6 @@ export default function SongsTab({ records }: Props) {
     if (sortKey !== key) return <span style={{ color: '#6a8099', marginLeft: 4 }}>⇅</span>
     return <span style={{ color: '#8fa8c0', marginLeft: 4 }}>{sortDir === 'asc' ? '▲' : '▼'}</span>
   }
-
-  const treeColorscale: [number, string][] = [
-    [0.0, '#0f1923'],
-    [0.4, '#1a2738'],
-    [0.7, '#3b5c8a'],
-    [1.0, '#8fa8c0'],
-  ]
 
   return (
     <div>
