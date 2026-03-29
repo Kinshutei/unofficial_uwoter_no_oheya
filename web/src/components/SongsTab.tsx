@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const MIKAGE_ICON = `${import.meta.env.BASE_URL}icon_mikage.png`
+const WOUCA_ICON = `${import.meta.env.BASE_URL}uwo_ter_room_icon.png`
 import Plot from 'react-plotly.js'
 import { StreamingRecord, SongStat } from '../types'
 import { aggregateSongs } from '../utils/csv'
@@ -143,7 +143,7 @@ export default function SongsTab({ records }: Props) {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
         <h3 style={{ color: '#555', margin: 0 }}>{t('songs.rankingTitle')}</h3>
-        <button className="btn-secondary" onClick={() => setBarKey((k) => k + 1)}><img src={MIKAGE_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
+        <button className="btn-secondary" onClick={() => setBarKey((k) => k + 1)}><img src={WOUCA_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
       </div>
       <Plot
         key={barKey}
@@ -176,7 +176,7 @@ export default function SongsTab({ records }: Props) {
         <>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '24px 0 8px' }}>
             <h3 style={{ color: '#555', margin: 0 }}>{t('songs.yearTitle')}</h3>
-            <button className="btn-secondary" onClick={() => setTreeKey((k) => k + 1)}><img src={MIKAGE_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
+            <button className="btn-secondary" onClick={() => setTreeKey((k) => k + 1)}><img src={WOUCA_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
           </div>
           <Plot
             key={treeKey}
@@ -215,7 +215,7 @@ export default function SongsTab({ records }: Props) {
         <>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '24px 0 8px' }}>
             <h3 style={{ color: '#555', margin: 0 }}>{t('songs.artistTitle')}</h3>
-            <button className="btn-secondary" onClick={() => setTreeKey2((k) => k + 1)}><img src={MIKAGE_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
+            <button className="btn-secondary" onClick={() => setTreeKey2((k) => k + 1)}><img src={WOUCA_ICON} alt="" style={{ height: 16, width: 16, objectFit: "contain", verticalAlign: "middle", marginRight: 5, filter: "invert(1) opacity(0.5)" }} />{t('songs.reset')}</button>
           </div>
           <Plot
             key={treeKey2}
