@@ -45,9 +45,9 @@ const LANGS = [
 
 const LOGO_URL = `${import.meta.env.BASE_URL}uwo_ter_room_icon.png`
 const VIDEOS = [
-  `${import.meta.env.BASE_URL}wouca_moviecard_01.mp4`,
-  `${import.meta.env.BASE_URL}wouca_moviecard_02.mp4`,
-  `${import.meta.env.BASE_URL}wouca_moviecard_03.mp4`,
+  `${import.meta.env.BASE_URL}wouca_moviecard_04.mp4`,
+  `${import.meta.env.BASE_URL}wouca_moviecard_05.mp4`,
+  `${import.meta.env.BASE_URL}wouca_moviecard_06.mp4`,
 ]
 const FADE_BEFORE = 1.2 // 動画終了 n 秒前にフェード開始
 
