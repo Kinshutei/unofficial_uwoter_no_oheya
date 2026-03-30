@@ -70,10 +70,9 @@ h3 {
 }
 
 .header-nav {
-  flex: 1;
   display: flex;
-  justify-content: center;
   gap: 40px;
+  margin-left: 32px;
 }
 .header-nav-link {
   font-family: 'M PLUS 1p', sans-serif;
@@ -98,6 +97,7 @@ h3 {
   display: flex;
   gap: 2px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 .lang-btn {
   background: none;
