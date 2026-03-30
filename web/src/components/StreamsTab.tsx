@@ -205,6 +205,7 @@ function StreamExpander({ label, forceOpen, defaultOpen, thumbUrl, cleanUrl, set
                   <tr>
                     <th>#</th>
                     <th>{t('streams.colSong')}</th>
+                    <th>{t('streams.colNote')}</th>
                     <th>{t('streams.colArtist')}</th>
                     <th>{t('streams.colKey')}</th>
                     <th>{t('streams.colUrl')}</th>
@@ -237,6 +238,7 @@ function StreamExpander({ label, forceOpen, defaultOpen, thumbUrl, cleanUrl, set
                             ) : displayTitle
                           })()}
                         </td>
+                        <td style={{ color: '#aaaaaa', fontSize: '12px' }}>{r.補足情報}</td>
                         <td style={{ color: hitArtist ? '#6b9fd4' : '#888888', fontWeight: hitArtist ? 600 : undefined }}>{displayArtist}</td>
                         <td style={{ color: '#aaaaaa', fontSize: '12px', whiteSpace: 'nowrap' }}>{r.キー}</td>
                         <td>

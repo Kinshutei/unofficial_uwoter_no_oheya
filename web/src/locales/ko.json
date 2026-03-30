@@ -21,6 +21,7 @@
     "expandAll": "▼ 전체 열기",
     "collapseAll": "▲ 전체 닫기",
     "colSong": "곡명",
+    "colNote": "비고",
     "colArtist": "원곡 아티스트",
     "colKey": "키",
     "colUrl": "URL",

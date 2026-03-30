@@ -55,6 +55,7 @@ export function parseCSV(
     return {
       枠名:              row['枠名'] ?? '',
       song_id:           songId,
+      補足情報:          row['補足情報']?.trim() ?? '',
       楽曲名:            master?.楽曲名 ?? row['楽曲名'] ?? '',
       楽曲名_en:         master?.楽曲名_en,
       楽曲名_ko:         master?.楽曲名_ko,

@@ -20,6 +20,7 @@ export interface SongMaster {
 export interface StreamingRecord {
   枠名: string
   song_id: string
+  補足情報: string
   楽曲名: string
   楽曲名_en?: string
   楽曲名_ko?: string
