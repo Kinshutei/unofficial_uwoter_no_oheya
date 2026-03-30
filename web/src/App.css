@@ -147,7 +147,8 @@ h3 {
   left: 24px;
   z-index: 2;
   font-size: clamp(72px, 12vw, 128px);
-  font-weight: 800;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.45);
   pointer-events: none;
