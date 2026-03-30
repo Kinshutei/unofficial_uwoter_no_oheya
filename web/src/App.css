@@ -149,9 +149,7 @@ h3 {
   font-size: clamp(72px, 12vw, 128px);
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #ffffff;
-  opacity: 0.55;
-  mix-blend-mode: difference;
+  color: rgba(255, 255, 255, 0.45);
   pointer-events: none;
   user-select: none;
 }
