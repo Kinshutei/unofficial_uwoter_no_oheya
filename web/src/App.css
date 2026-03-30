@@ -3,10 +3,10 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 * {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='rgba(255,255,255,0.7)' stroke='rgba(0,0,0,0.4)' stroke-width='1.5'/%3E%3C/svg%3E") 8 8, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='rgba(255,255,255,0.7)' stroke='rgba(0,0,0,0.4)' stroke-width='1.5'/%3E%3C/svg%3E") 8 8, auto !important;
 }
 a, button, [role="button"], select, label[for], input[type="checkbox"], input[type="radio"] {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%238fa8c0' stroke='rgba(0,0,0,0.4)' stroke-width='1.5'/%3E%3C/svg%3E") 8 8, pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%238fa8c0' stroke='rgba(0,0,0,0.4)' stroke-width='1.5'/%3E%3C/svg%3E") 8 8, pointer !important;
 }
 
 :root {
