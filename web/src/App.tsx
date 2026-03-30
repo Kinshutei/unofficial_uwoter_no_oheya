@@ -291,6 +291,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
             <video ref={videoARef} className="hero-video" src={VIDEOS[0]} autoPlay muted playsInline />
             <video ref={videoBRef} className="hero-video" muted playsInline />
             <canvas ref={canvasRef} className="hero-glitch-canvas" />
+            <span className="hero-catchcopy">We love wouca!!!</span>
           </section>
 
           {/* ── フィルター / タブ ── */}

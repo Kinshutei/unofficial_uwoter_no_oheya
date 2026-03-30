@@ -141,6 +141,21 @@ h3 {
   transition: opacity 1.5s ease;
 }
 
+.hero-catchcopy {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  z-index: 2;
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  opacity: 0.55;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ── フィルターセクション ── */
 .filter-section {
   display: flex;
