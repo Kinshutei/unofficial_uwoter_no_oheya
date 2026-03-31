@@ -60,6 +60,7 @@ export default function StreamsTab({ records }: Props) {
           <span style={{ position: 'absolute', left: '10px', color: '#606060', fontSize: '14px', pointerEvents: 'none' }}>🔍</span>
           <input
             type="text"
+            className="search-input"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('streams.searchPlaceholder')}

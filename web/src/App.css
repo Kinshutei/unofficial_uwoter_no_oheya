@@ -610,3 +610,6 @@ h3 {
   .footer-icons { display: none; }
   .expander-body > div { grid-template-columns: 1fr !important; }
 }
+
+/* ── 検索フォーム ── */
+.search-input::placeholder { color: rgba(255,255,255,0.55); }
