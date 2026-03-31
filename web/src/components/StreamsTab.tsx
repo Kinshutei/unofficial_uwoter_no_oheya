@@ -72,7 +72,7 @@ export default function StreamsTab({ records }: Props) {
               fontSize: '15px',
               outline: 'none',
               background: '#708090',
-              color: '#262626',
+              color: '#ffffff',
               boxShadow: isSearching ? '0 0 0 2px rgba(138,184,185,0.35)' : undefined,
               borderColor: isSearching ? '#8ab8b9' : '#d8cfc4',
               transition: 'border-color 0.15s, box-shadow 0.15s',
