@@ -91,7 +91,7 @@ export default function SongsTab({ records }: Props) {
   }, [songs, lang])
 
   if (records.length === 0) {
-    return <p style={{ color: '#888', padding: '1rem' }}>{t('songs.empty')}</p>
+    return <p style={{ color: '#8fa8c0', padding: '1rem' }}>{t('songs.empty')}</p>
   }
 
   const handleHeaderClick = (key: SortKey) => {
@@ -129,11 +129,11 @@ export default function SongsTab({ records }: Props) {
             {sortedSongs.map((s, i) => (
               <tr key={i}>
                 <td>{localizeField(s.楽曲名, s.楽曲名_en, s.楽曲名_ko, s.楽曲名_zh, lang)}</td>
-                <td style={{ color: '#666' }}>{localizeField(s.原曲アーティスト, s.原曲アーティスト_en, s.原曲アーティスト_ko, s.原曲アーティスト_zh, lang)}</td>
-                <td style={{ color: '#666' }}>{s.作詞1}{s.作詞2 && <><br /><span style={{ color: '#888' }}>{s.作詞2}</span></>}</td>
-                <td style={{ color: '#666' }}>{s.作曲1}{s.作曲2 && <><br /><span style={{ color: '#888' }}>{s.作曲2}</span></>}</td>
-                <td style={{ color: '#666' }}>{s.編曲1}{s.編曲2 && <><br /><span style={{ color: '#888' }}>{s.編曲2}</span></>}</td>
-                <td style={{ color: '#666' }}>{s.リリース日}</td>
+                <td style={{ color: '#a0b8cc' }}>{localizeField(s.原曲アーティスト, s.原曲アーティスト_en, s.原曲アーティスト_ko, s.原曲アーティスト_zh, lang)}</td>
+                <td style={{ color: '#a0b8cc' }}>{s.作詞1}{s.作詞2 && <><br /><span style={{ color: '#8fa8c0' }}>{s.作詞2}</span></>}</td>
+                <td style={{ color: '#a0b8cc' }}>{s.作曲1}{s.作曲2 && <><br /><span style={{ color: '#8fa8c0' }}>{s.作曲2}</span></>}</td>
+                <td style={{ color: '#a0b8cc' }}>{s.編曲1}{s.編曲2 && <><br /><span style={{ color: '#8fa8c0' }}>{s.編曲2}</span></>}</td>
+                <td style={{ color: '#a0b8cc' }}>{s.リリース日}</td>
                 <td style={{ textAlign: 'center', fontWeight: 600, color: '#8fa8c0' }}>{s.歌唱回数}</td>
               </tr>
             ))}

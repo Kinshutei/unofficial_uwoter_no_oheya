@@ -406,6 +406,7 @@ h3 {
   border-bottom: 1px solid var(--bg-3);
   color: var(--text);
   white-space: nowrap;
+  vertical-align: top;
 }
 .songs-table th:nth-child(1), .songs-table td:nth-child(1) { min-width: 190px; }
 .songs-table th:nth-child(2), .songs-table td:nth-child(2) { min-width: 170px; }

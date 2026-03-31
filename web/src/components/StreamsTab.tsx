@@ -71,7 +71,7 @@ export default function StreamsTab({ records }: Props) {
               fontFamily: 'inherit',
               fontSize: '15px',
               outline: 'none',
-              background: '#f5f0e8',
+              background: '#708090',
               color: '#2a2a2a',
               boxShadow: isSearching ? '0 0 0 2px rgba(138,184,185,0.35)' : undefined,
               borderColor: isSearching ? '#8ab8b9' : '#d8cfc4',

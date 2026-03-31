@@ -405,7 +405,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               className="close-tab-btn"
               onClick={() => setActiveTab(null)}
             >
-              <span className="close-default">× CLOSE LIVESTREAMING</span>
+              <span className="close-default">{activeTab === 'songs' ? '× CLOSE SONG REPERTOIRE' : '× CLOSE LIVESTREAMING'}</span>
               <span className="close-hover">&gt;&gt;&gt; BACK TO HOME</span>
             </button>
           )}
