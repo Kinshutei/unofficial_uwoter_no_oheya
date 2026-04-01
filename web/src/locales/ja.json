@@ -55,7 +55,7 @@
     "howTitle": "タブの使い方",
     "howStreamsTitle": "🎙 LiveStreaming Info",
     "howStreamsDesc": "歌枠・配信ごとのセットリスト一覧です。配信日・枠名でグループ化され、各枠をクリックすると歌唱曲リストが展開します。YouTube リンクから該当配信へ直接移動でき、楽曲名の右側のリンクからはその歌が始まるあたりへ飛べます！",
-    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsTitle": "🎵 Song Repertoire",
     "howSongsDesc": "楽曲ごとの集計データです。列ヘッダーをクリックするとその列でソートできます。下部のグラフで歌唱回数ランキング・リリース年度分布・原曲アーティスト分布を確認できます。",
     "dataTitle": "データについて",
     "dataFormat": "データ形式",

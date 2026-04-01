@@ -55,7 +55,7 @@
     "howTitle": "頁籤使用說明",
     "howStreamsTitle": "🎙 LiveStreaming Info",
     "howStreamsDesc": "依次呈現各直播的歌單。依日期及直播名稱分組，點擊各直播可展開曲目列表。可透過 YouTube 連結直接跳轉至該直播，曲名右側的連結則可跳至該曲開始演唱的位置！",
-    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsTitle": "🎵 Song Repertoire",
     "howSongsDesc": "依曲目整合的統計數據。點擊欄位標題可依該欄排序。下方圖表可確認演唱次數排名、發行年份分布及原曲藝術家分布。",
     "dataTitle": "關於資料",
     "dataFormat": "資料格式",

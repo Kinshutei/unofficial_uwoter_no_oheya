@@ -55,7 +55,7 @@
     "howTitle": "How to Use the Tabs",
     "howStreamsTitle": "🎙 LiveStreaming Info",
     "howStreamsDesc": "A setlist for each stream session. Sessions are grouped by date and name. Click a session to expand its song list. The YouTube link takes you directly to the stream, and the link next to each song title jumps to around where that song starts!",
-    "howSongsTitle": "🎵 Uta-Mita DB",
+    "howSongsTitle": "🎵 Song Repertoire",
     "howSongsDesc": "Aggregated data by song. Click column headers to sort. The graphs below show the singing count ranking, release year distribution, and original artist distribution.",
     "dataTitle": "About the Data",
     "dataFormat": "Format",
