@@ -47,11 +47,11 @@
   },
   "about": {
     "siteTitle": "關於本站",
-    "siteDesc1": "本站是以 RK Music 旗下 VSinger 深影（Mikage）的翻唱作品及直播資訊為主題的粉絲製作資料庫。",
-    "siteDesc2": "本站並非官方網站，資訊可能包含錯誤。請勿直接聯繫 RK Music 及深影。如有疑問，請聯繫<link>白百合と金鷲亭(@WL_GE_inn)</link>。",
+    "siteDesc1": "本站是以 RK Music 旗下 VSinger wouca 的翻唱作品及直播資訊為主題的粉絲製作資料庫。",
+    "siteDesc2": "本站並非官方網站，資訊可能包含錯誤。請勿直接聯繫 RK Music 及 wouca。如有疑問，請聯繫<link>白百合と金鷲亭(@WL_GE_inn)</link>。",
     "siteNote": "※ 資訊由志工（僅 1 人）手動更新。",
     "purposeTitle": "本站的建立目的",
-    "purposeDesc": "本站為個人運營的資訊分享網站，希望能讓更多人認識深影的活動，並為她提升創作動力盡一份心力。",
+    "purposeDesc": "本站為個人運營的資訊分享網站，希望能讓更多人認識 wouca 的活動，並為她提升創作動力盡一份心力。",
     "howTitle": "頁籤使用說明",
     "howStreamsTitle": "🎙 LiveStreaming Info",
     "howStreamsDesc": "依次呈現各直播的歌單。依日期及直播名稱分組，點擊各直播可展開曲目列表。可透過 YouTube 連結直接跳轉至該直播，曲名右側的連結則可跳至該曲開始演唱的位置！",
@@ -63,14 +63,14 @@
     "dataUpdate": "更新時間",
     "dataUpdateVal": "每次直播結束後手動更新",
     "dataCoverage": "收錄範圍",
-    "dataCoverageVal": "深影的歌唱直播及翻唱影片",
+    "dataCoverageVal": "wouca 的歌唱直播及翻唱影片",
     "dataCollab": "合唱直播",
     "dataCollabVal": "也會記錄合唱嘉賓的名稱",
     "linksTitle": "連結",
-    "linkYt": "▶ 深影 YouTube 頻道",
-    "linkX": "𝕏 深影 X（Twitter）",
+    "linkYt": "▶ wouca YouTube 頻道",
+    "linkX": "𝕏 wouca X（Twitter）",
     "disclaimerTitle": "免責聲明",
-    "disclaimerText": "本站為個人運營，與 RK Music 及深影無關。雖盡力確保資訊正確，仍可能包含錯誤。若 RK Music 或深影提出下架要求，本站將立即因應。"
+    "disclaimerText": "本站為個人運營，與 RK Music 及 wouca 無關。雖盡力確保資訊正確，仍可能包含錯誤。若 RK Music 或 wouca 提出下架要求，本站將立即因應。"
   },
   "changelog": {
     "title": "更新記錄",

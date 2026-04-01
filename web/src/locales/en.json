@@ -47,11 +47,11 @@
   },
   "about": {
     "siteTitle": "About This Site",
-    "siteDesc1": "This is a fan-made database site covering the song covers and streaming information of RK Music VSinger Mikage.",
-    "siteDesc2": "This is not an official site, and the information may contain errors. Please do not contact RK Music or Mikage directly. For inquiries, please contact <link>Shirayuri to Kinwashi-tei (@WL_GE_inn)</link>.",
+    "siteDesc1": "This is a fan-made database site covering the song covers and streaming information of RK Music VSinger wouca.",
+    "siteDesc2": "This is not an official site, and the information may contain errors. Please do not contact RK Music or wouca directly. For inquiries, please contact <link>Shirayuri to Kinwashi-tei (@WL_GE_inn)</link>.",
     "siteNote": "※ Information is manually updated by a volunteer (just one person).",
     "purposeTitle": "Purpose of This Site",
-    "purposeDesc": "This site is a personally operated information site, created with the hope of introducing Mikage's activities to more people and contributing to her motivation.",
+    "purposeDesc": "This site is a personally operated information site, created with the hope of introducing wouca's activities to more people and contributing to her motivation.",
     "howTitle": "How to Use the Tabs",
     "howStreamsTitle": "🎙 LiveStreaming Info",
     "howStreamsDesc": "A setlist for each stream session. Sessions are grouped by date and name. Click a session to expand its song list. The YouTube link takes you directly to the stream, and the link next to each song title jumps to around where that song starts!",
@@ -63,14 +63,14 @@
     "dataUpdate": "Update timing",
     "dataUpdateVal": "Manually updated after each stream",
     "dataCoverage": "Coverage",
-    "dataCoverageVal": "Mikage's singing streams and cover videos",
+    "dataCoverageVal": "wouca's singing streams and cover videos",
     "dataCollab": "Collab streams",
     "dataCollabVal": "Collaborator names are also recorded",
     "linksTitle": "Links",
-    "linkYt": "▶ Mikage YouTube Channel",
-    "linkX": "𝕏 Mikage X (Twitter)",
+    "linkYt": "▶ wouca YouTube Channel",
+    "linkX": "𝕏 wouca X (Twitter)",
     "disclaimerTitle": "Disclaimer",
-    "disclaimerText": "This site is personally operated and is unrelated to RK Music or Mikage. While we strive to ensure accuracy, errors may be present. If RK Music or Mikage requests removal of any information, we will respond promptly."
+    "disclaimerText": "This site is personally operated and is unrelated to RK Music or wouca. While we strive to ensure accuracy, errors may be present. If RK Music or wouca requests removal of any information, we will respond promptly."
   },
   "changelog": {
     "title": "Changelog",

@@ -69,10 +69,10 @@ export default function AboutTab() {
       <section style={{ marginBottom: 40 }}>
         <h3 style={{ color: '#6b9fd4', fontSize: '1.1rem' }}>{t('about.linksTitle')}</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <a href="https://www.youtube.com/@Mikage_RKMusic" target="_blank" rel="noopener noreferrer" style={{ color: '#6b9fd4', fontSize: '0.95rem' }}>
+          <a href="https://www.youtube.com/@wouca" target="_blank" rel="noopener noreferrer" style={{ color: '#6b9fd4', fontSize: '0.95rem' }}>
             {t('about.linkYt')}
           </a>
-          <a href="https://twitter.com/Mikage_0916" target="_blank" rel="noopener noreferrer" style={{ color: '#6b9fd4', fontSize: '0.95rem' }}>
+          <a href="https://x.com/wouca_rkm" target="_blank" rel="noopener noreferrer" style={{ color: '#6b9fd4', fontSize: '0.95rem' }}>
             {t('about.linkX')}
           </a>
         </div>
