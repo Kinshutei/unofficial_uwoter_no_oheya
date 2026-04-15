@@ -11,11 +11,11 @@ import './App.css'
 
 const STREAMING_CSV_URL =
   import.meta.env.VITE_CSV_URL ??
-  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/streaminginfo_wouca.csv'
+  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/streaminginfo_wouca.json'
 
 const SONG_MASTER_URL =
   import.meta.env.VITE_MASTER_URL ??
-  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/rkmusic_song_master.csv'
+  'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/rkmusic_song_master.json'
 
 const CONTENTS_URL =
   'https://raw.githubusercontent.com/Kinshutei/unofficial_uwoter_no_oheya/main/wouca_contents.json'
@@ -83,11 +83,11 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
         ])
         if (!masterRes.ok) throw new Error(`song_master HTTP ${masterRes.status}`)
         if (!streamRes.ok) throw new Error(`streaming_info HTTP ${streamRes.status}`)
-        const [masterText, streamText] = await Promise.all([
-          masterRes.text(),
-          streamRes.text(),
+        const [masterData, streamData] = await Promise.all([
+          masterRes.json(),
+          streamRes.json(),
         ])
-        setRecords(parseCSV(streamText, parseSongMaster(masterText)))
+        setRecords(parseCSV(streamData, parseSongMaster(masterData)))
       } catch (e: unknown) {
         setError(String(e))
       } finally {
