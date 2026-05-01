@@ -92,6 +92,7 @@ export default function App() {
     const stored = localStorage.getItem('lang') ?? ''
     return LANGS.some(l => l.value === stored) ? stored : 'ja'
   })
+  const [langOpen, setLangOpen] = useState(false)
 
   const videoARef     = useRef<HTMLVideoElement>(null)
   const videoBRef     = useRef<HTMLVideoElement>(null)
@@ -291,7 +292,8 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
             {t('tab.changelog')}
           </button>
         </nav>
-        <div className="header-lang">
+        {/* PC: 4ボタン */}
+        <div className="header-lang label-pc">
           {LANGS.map(l => (
             <button
               key={l.value}
@@ -301,6 +303,29 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               {l.label}
             </button>
           ))}
+        </div>
+        {/* モバイル: LNGドロップダウン */}
+        <div className="header-lang lang-mobile-wrap label-mobile">
+          {langOpen && <div className="lang-overlay" onClick={() => setLangOpen(false)} />}
+          <button
+            className={`lang-btn lang-btn-toggle${langOpen ? ' active' : ''}`}
+            onClick={() => setLangOpen(v => !v)}
+          >
+            LNG
+          </button>
+          {langOpen && (
+            <div className="lang-dropdown">
+              {LANGS.map(l => (
+                <button
+                  key={l.value}
+                  className={`lang-dropdown-item${selectedLang === l.value ? ' active' : ''}`}
+                  onClick={() => { setSelectedLang(l.value); setLanguage(l.value); setLangOpen(false) }}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </header>
 

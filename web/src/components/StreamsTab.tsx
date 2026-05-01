@@ -97,8 +97,14 @@ export default function StreamsTab({ records }: Props) {
         )}
         {!isSearching && (
           <>
-            <button className="btn-secondary" onClick={() => { setDefaultOpen(true); setMountKey((k) => k + 1) }}>{t('streams.expandAll')}</button>
-            <button className="btn-secondary" onClick={() => { setDefaultOpen(false); setMountKey((k) => k + 1) }}>{t('streams.collapseAll')}</button>
+            <button className="btn-secondary" onClick={() => { setDefaultOpen(true); setMountKey((k) => k + 1) }}>
+              <span className="label-pc">{t('streams.expandAll')}</span>
+              <span className="label-mobile">▼ OPEN</span>
+            </button>
+            <button className="btn-secondary" onClick={() => { setDefaultOpen(false); setMountKey((k) => k + 1) }}>
+              <span className="label-pc">{t('streams.collapseAll')}</span>
+              <span className="label-mobile">▲ CLOSE</span>
+            </button>
           </>
         )}
       </div>

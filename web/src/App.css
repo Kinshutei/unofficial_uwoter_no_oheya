@@ -604,7 +604,7 @@ h3 {
   .main-content { padding: 32px 20px; }
   .pickup-section { padding: 40px 20px; }
   .pickup-grid { grid-template-columns: 1fr; }
-  .songs-table-wrap { max-height: calc(15 * 38px + 42px); }
+  .songs-table-wrap { display: none; }
   .footer-full  { display: none; }
   .footer-short { display: inline; }
   .footer-icons { display: none; }
@@ -613,6 +613,147 @@ h3 {
 
 /* ── 検索フォーム ── */
 .search-input::placeholder { color: rgba(255,255,255,0.55); }
+@media (max-width: 600px) {
+  .search-input::placeholder { font-size: 0.72rem; }
+}
+
+/* ── PC/モバイル表示切り替え ── */
+.label-mobile { display: none; }
+@media (max-width: 600px) {
+  .label-pc     { display: none; }
+  .label-mobile { display: inline; }
+}
+
+/* ── 言語ドロップダウン ── */
+.lang-mobile-wrap { display: none; }
+@media (max-width: 600px) {
+  .lang-mobile-wrap { display: flex; }
+}
+.lang-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 198;
+}
+.lang-btn-toggle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 199;
+  min-width: 64px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.lang-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+}
+.lang-dropdown-item:hover { background: var(--bg-3); color: var(--text); }
+.lang-dropdown-item.active { color: var(--steel); }
+
+/* ── 楽曲カードリスト (モバイルのみ) ── */
+.songs-card-list { display: none; }
+
+/* ── 楽曲カード (モバイル) ── */
+@media (max-width: 600px) {
+  .songs-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .songs-card {
+    background: rgba(59, 92, 138, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+
+  .songs-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .songs-card-title-row {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .songs-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .songs-card-artist {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .songs-card-count {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--steel);
+    white-space: nowrap;
+  }
+
+  .songs-card-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .songs-card-detail {
+    display: none;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+  }
+
+  .songs-card.open .songs-card-detail { display: block; }
+  .songs-card-detail-row { display: flex; gap: 6px; margin-bottom: 2px; }
+  .songs-card-detail-label { color: var(--text-muted); min-width: 32px; }
+
+  .songs-card-more-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgba(59, 92, 138, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--steel);
+    cursor: pointer;
+    text-align: center;
+  }
+}
 
 /* ── Lite YouTube ── */
 .lite-yt-btn {
