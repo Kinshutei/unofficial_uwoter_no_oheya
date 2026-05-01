@@ -43,6 +43,34 @@ const LANGS = [
   { value: 'zh-TW', label: 'TW' },
 ]
 
+function LiteYouTube({ videoId, title, isShort = false }: { videoId: string; title: string; isShort?: boolean }) {
+  const [active, setActive] = useState(false)
+  const wrapClass = isShort ? 'short-embed-wrap' : 'pickup-embed-wrap'
+  const thumbUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+  return (
+    <div className={wrapClass}>
+      {active ? (
+        <iframe
+          className="pickup-embed"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        <button
+          className="lite-yt-btn"
+          onClick={() => setActive(true)}
+          aria-label={title}
+          style={{ backgroundImage: `url(${thumbUrl})` }}
+        >
+          <span className="lite-yt-play" aria-hidden="true" />
+        </button>
+      )}
+    </div>
+  )
+}
+
 const LOGO_URL = `${import.meta.env.BASE_URL}uwo_ter_room_icon.png`
 const VIDEOS = [
   `${import.meta.env.BASE_URL}wouca_moviecard_04.mp4`,
@@ -341,9 +369,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               {contents.pickup.map((v: ContentVideo) => (
                 <div key={v.video_id} className="pickup-card">
                   {v.note && <span className="new-release-badge">{v.note}</span>}
-                  <div className="pickup-embed-wrap">
-                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LiteYouTube videoId={v.video_id} title={v.title} />
                   <p className="pickup-card-title">{v.title}</p>
                 </div>
               ))}
@@ -356,9 +382,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               {contents.original.map((v: ContentVideo) => (
                 <div key={v.video_id} className="pickup-card">
                   {v.note && <span className="new-release-badge">{v.note}</span>}
-                  <div className="pickup-embed-wrap">
-                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LiteYouTube videoId={v.video_id} title={v.title} />
                   <p className="pickup-card-title">{v.title}</p>
                 </div>
               ))}
@@ -371,9 +395,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               {contents.short.map((v: ContentVideo) => (
                 <div key={v.video_id} className="short-card">
                   {v.note && <span className="new-release-badge">{v.note}</span>}
-                  <div className="short-embed-wrap">
-                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LiteYouTube videoId={v.video_id} title={v.title} isShort />
                   <p className="pickup-card-title">{v.title}</p>
                 </div>
               ))}
@@ -386,9 +408,7 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
               {contents.livestreaming.map((v: ContentVideo) => (
                 <div key={v.video_id} className="pickup-card">
                   {v.note && <span className="new-release-badge">{v.note}</span>}
-                  <div className="pickup-embed-wrap">
-                    <iframe className="pickup-embed" src={`https://www.youtube.com/embed/${v.video_id}`} title={v.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
+                  <LiteYouTube videoId={v.video_id} title={v.title} />
                   <p className="pickup-card-title">{v.title}</p>
                 </div>
               ))}
