@@ -76,8 +76,78 @@
     "title": "Changelog",
     "entries": [
       {
+        "date": "2026-05-01",
+        "items": [
+          "Mobile UI optimization (song card list, LNG language dropdown, OPEN/CLOSE buttons)",
+          "Startup performance improvements (lazy loading for YouTube & Plotly charts)",
+          "Disabled chart zoom"
+        ]
+      },
+      {
+        "date": "2026-04-23",
+        "items": [
+          "Cleaned up duplicate records in song master data"
+        ]
+      },
+      {
+        "date": "2026-04-15",
+        "items": [
+          "Migrated data management from CSV to JSON format"
+        ]
+      },
+      {
+        "date": "2026-04-12",
+        "items": [
+          "Added song end time column to stream info"
+        ]
+      },
+      {
+        "date": "2026-04-04",
+        "items": [
+          "Added Google Analytics and structured data (JSON-LD)"
+        ]
+      },
+      {
+        "date": "2026-04-02",
+        "items": [
+          "Fixed encoding and column structure of streaming info CSV"
+        ]
+      },
+      {
         "date": "2026-04-01",
-        "items": ["Launched the unofficial uwo_ter / wouca fan site"]
+        "items": [
+          "Launched the unofficial uwo_ter / wouca fan site",
+          "Updated About tab for woucaDB",
+          "Improved search form styling"
+        ]
+      },
+      {
+        "date": "2026-03-31",
+        "items": [
+          "Added custom cursor",
+          "Adjusted header navigation layout"
+        ]
+      },
+      {
+        "date": "2026-03-30",
+        "items": [
+          "Added hero videos 04–06",
+          "Added supplementary info and key columns to setlist"
+        ]
+      },
+      {
+        "date": "2026-03-29",
+        "items": [
+          "Improved SUNG REPERTOIRE UI styling",
+          "Added support for multiple lyricist / composer / arranger credits"
+        ]
+      },
+      {
+        "date": "2026-03-28",
+        "items": [
+          "Initial site construction",
+          "Added PICKUP, Original Song, Short, and LiveStreaming sections"
+        ]
       }
     ]
   }
