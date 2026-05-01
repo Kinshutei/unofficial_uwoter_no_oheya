@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StreamingRecord } from './types'
 import { parseCSV, parseSongMaster } from './utils/csv'
 import { setLanguage } from './i18n'
 import StreamsTab from './components/StreamsTab'
-import SongsTab from './components/SongsTab'
+const SongsTab = lazy(() => import('./components/SongsTab'))
 import AboutTab from './components/AboutTab'
 import ChangelogTab from './components/ChangelogTab'
 import './App.css'
@@ -412,7 +412,11 @@ const canvasRef     = useRef<HTMLCanvasElement>(null)
           {loading && <p className="status-text">{t('loading')}</p>}
           {error   && <p className="status-text error">{t('error', { error })}</p>}
           {!loading && !error && activeTab === 'streams' && <StreamsTab records={records} />}
-          {!loading && !error && activeTab === 'songs'   && <SongsTab   records={records} />}
+          {!loading && !error && activeTab === 'songs'   && (
+            <Suspense fallback={<p className="status-text">{t('loading')}</p>}>
+              <SongsTab records={records} />
+            </Suspense>
+          )}
         </main>
       )}
 
