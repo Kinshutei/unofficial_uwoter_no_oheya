@@ -95,6 +95,7 @@ function ArtistPlot({ artists, artistTotal }: ArtistPlotProps) {
         type: 'treemap',
         labels: artists.map((a) => a.displayName), parents: artists.map(() => ''),
         values: artists.map((a) => a.count),
+        sort: false,
         text: artists.map((a) => `${(a.count / artistTotal * 100).toFixed(1)}%`),
         texttemplate: '<b>%{label}</b><br>%{value}<br>%{text}',
         hovertemplate: '<b>%{label}</b><br>%{value} (%{text})<extra></extra>',
