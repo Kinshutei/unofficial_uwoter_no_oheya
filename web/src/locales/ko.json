@@ -43,7 +43,8 @@
     "rankingTitle": "노래 횟수 랭킹 (상위 20곡)",
     "reset": "리셋",
     "yearTitle": "발매 연도 분포",
-    "artistTitle": "원곡 아티스트 분포"
+    "artistTitle": "원곡 아티스트 분포",
+    "artistOthers": "기타"
   },
   "about": {
     "siteTitle": "이 사이트에 대하여",

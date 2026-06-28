@@ -43,7 +43,8 @@
     "rankingTitle": "演唱次數排名（前 20 首）",
     "reset": "重置",
     "yearTitle": "發行年份分布",
-    "artistTitle": "原曲藝術家分布"
+    "artistTitle": "原曲藝術家分布",
+    "artistOthers": "其他"
   },
   "about": {
     "siteTitle": "關於本站",

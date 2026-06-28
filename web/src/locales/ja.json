@@ -43,7 +43,8 @@
     "rankingTitle": "歌唱回数（上位20曲）",
     "reset": "リセット",
     "yearTitle": "リリース年度分布",
-    "artistTitle": "原曲アーティスト分布"
+    "artistTitle": "原曲アーティスト分布",
+    "artistOthers": "その他"
   },
   "about": {
     "siteTitle": "このサイトについて",

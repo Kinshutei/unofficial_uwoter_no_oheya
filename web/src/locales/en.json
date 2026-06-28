@@ -43,7 +43,8 @@
     "rankingTitle": "Top 20 Most Sung Songs",
     "reset": "Reset",
     "yearTitle": "Release Year Distribution",
-    "artistTitle": "Original Artist Distribution"
+    "artistTitle": "Original Artist Distribution",
+    "artistOthers": "Others"
   },
   "about": {
     "siteTitle": "About This Site",

@@ -154,10 +154,29 @@ export default function SongsTab({ records }: Props) {
         artistMap.set(jaArtist, { count: s.歌唱回数, displayName: displayArtist })
       }
     }
-    const artists = Array.from(artistMap.values()).sort((a, b) => b.count - a.count)
-    const artistTotal = artists.reduce((sum, a) => sum + a.count, 0)
+    const sorted = Array.from(artistMap.values()).sort((a, b) => b.count - a.count)
+    const artistTotal = sorted.reduce((sum, a) => sum + a.count, 0)
+
+    // 上位50%に達するまでのアーティストを名前表示、残りは「その他」にまとめる
+    const half = artistTotal * 0.5
+    let cumulative = 0
+    let splitIndex = sorted.length
+    for (let i = 0; i < sorted.length; i++) {
+      cumulative += sorted[i].count
+      if (cumulative >= half) {
+        splitIndex = i + 1
+        break
+      }
+    }
+
+    const topArtists = sorted.slice(0, splitIndex)
+    const othersCount = sorted.slice(splitIndex).reduce((sum, a) => sum + a.count, 0)
+    const artists = othersCount > 0
+      ? [...topArtists, { count: othersCount, displayName: t('songs.artistOthers') }]
+      : topArtists
+
     return { artists, artistTotal }
-  }, [songs, lang])
+  }, [songs, lang, t])
 
   if (records.length === 0) {
     return <p style={{ color: '#8fa8c0', padding: '1rem' }}>{t('songs.empty')}</p>
