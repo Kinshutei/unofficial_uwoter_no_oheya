@@ -100,7 +100,7 @@ function ArtistPlot({ artists, artistTotal }: ArtistPlotProps) {
         texttemplate: '<b>%{label}</b><br>%{value}<br>%{text}',
         hovertemplate: '<b>%{label}</b><br>%{value} (%{text})<extra></extra>',
         marker: { colors: artists.map((a) => a.count), colorscale: treeColorscale, line: { width: 2, color: '#ffffff' }, pad: { t: 22, l: 4, r: 4, b: 4 } },
-      }]}
+      } as any]}
       layout={{ paper_bgcolor: 'rgba(0,0,0,0)', font: { family: 'Noto Sans JP', color: '#1a1a1a' }, margin: { t: 4, l: 0, r: 0, b: 0 }, height: 420, dragmode: false }}
       config={{ displayModeBar: false, responsive: true, scrollZoom: false }}
       style={{ width: '100%' }} useResizeHandler
