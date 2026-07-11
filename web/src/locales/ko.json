@@ -40,6 +40,8 @@
     "colArrange": "편곡",
     "colRelease": "발매일",
     "colCount": "노래 횟수",
+    "listTitle": "과거 노래 목록 (횟수순)",
+    "totalCount": "전체 {{count}}곡",
     "rankingTitle": "노래 횟수 랭킹 (상위 20곡)",
     "reset": "리셋",
     "yearTitle": "발매 연도 분포",

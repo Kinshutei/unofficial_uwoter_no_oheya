@@ -40,6 +40,8 @@
     "colArrange": "編曲",
     "colRelease": "發行日",
     "colCount": "演唱次數",
+    "listTitle": "過往演唱曲目（依次數排序）",
+    "totalCount": "共 {{count}} 首",
     "rankingTitle": "演唱次數排名（前 20 首）",
     "reset": "重置",
     "yearTitle": "發行年份分布",

@@ -40,6 +40,8 @@
     "colArrange": "Arranger",
     "colRelease": "Release Date",
     "colCount": "Times Sung",
+    "listTitle": "Past Songs Sung (by Count)",
+    "totalCount": "{{count}} songs total",
     "rankingTitle": "Top 20 Most Sung Songs",
     "reset": "Reset",
     "yearTitle": "Release Year Distribution",

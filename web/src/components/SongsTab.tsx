@@ -214,6 +214,13 @@ export default function SongsTab({ records }: Props) {
 
   return (
     <div>
+      <h3 style={{ color: '#6b9fd4', margin: '0 0 8px' }}>
+        {t('songs.listTitle')}
+        <span style={{ color: '#6a8099', fontWeight: 400, fontSize: '0.85em', marginLeft: 8 }}>
+          {t('songs.totalCount', { count: songs.length })}
+        </span>
+      </h3>
+
       {/* ── モバイル: カードリスト（CSS で表示切り替え） ── */}
       <div className="songs-card-list">
         {visibleCards.map((s, i) => {
@@ -284,19 +291,19 @@ export default function SongsTab({ records }: Props) {
       </div>
 
       {/* ── グラフ（共通） ── */}
-      <h3 style={{ color: '#555', margin: '0 0 8px' }}>{t('songs.rankingTitle')}</h3>
+      <h3 style={{ color: '#6b9fd4', margin: '0 0 8px' }}>{t('songs.rankingTitle')}</h3>
       <RankingPlot top20={top20} barColors={barColors} lang={lang} />
 
       {years.length > 0 && (
         <>
-          <h3 style={{ color: '#555', margin: '24px 0 8px' }}>{t('songs.yearTitle')}</h3>
+          <h3 style={{ color: '#6b9fd4', margin: '24px 0 8px' }}>{t('songs.yearTitle')}</h3>
           <YearPlot years={years} />
         </>
       )}
 
       {artists.length > 0 && (
         <>
-          <h3 style={{ color: '#555', margin: '24px 0 8px' }}>{t('songs.artistTitle')}</h3>
+          <h3 style={{ color: '#6b9fd4', margin: '24px 0 8px' }}>{t('songs.artistTitle')}</h3>
           <ArtistPlot artists={artists} artistTotal={artistTotal} />
         </>
       )}
